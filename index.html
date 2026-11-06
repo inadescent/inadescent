@@ -263,6 +263,19 @@
         <span id="toast-message">Copied to clipboard</span>
     </div>
 
+    <!-- Image Lightbox Modal -->
+    <div id="image-modal-backdrop"
+        class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden opacity-0 transition-opacity duration-200 flex items-center justify-center p-4">
+        <div class="relative max-w-5xl w-full max-h-[90vh] flex flex-col items-center">
+            <button onclick="closeImageModal()" class="absolute -top-10 right-0 text-neutral-400 hover:text-white text-xs font-mono flex items-center gap-1.5 transition-colors">
+                <span>Close</span>
+                <span class="ray-kbd text-[10px]">ESC</span>
+            </button>
+            <img id="image-modal-img" src="" alt="Enlarged screenshot" class="max-w-full max-h-[80vh] object-contain rounded-xl border border-white/15 shadow-2xl bg-neutral-950" />
+            <div id="image-modal-caption" class="text-xs font-mono text-neutral-300 mt-3 text-center"></div>
+        </div>
+    </div>
+
     <!-- Raycast Command Palette Modal (⌘K) -->
     <div id="cmd-palette-backdrop"
         class="fixed inset-0 z-50 bg-black/70 backdrop-blur-md hidden opacity-0 transition-opacity duration-200 flex items-start justify-center pt-20 sm:pt-28 px-4">
@@ -316,6 +329,8 @@
                     class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/[0.04] transition-all">Skills</a>
                 <a href="#experiences"
                     class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/[0.04] transition-all">Experiences</a>
+                <a href="#games"
+                    class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/[0.04] transition-all">Games</a>
                 <a href="#resources"
                     class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/[0.04] transition-all">Resources</a>
                 <a href="#media"
@@ -362,6 +377,8 @@
                 class="block px-3 py-2 rounded-lg text-sm text-neutral-300 hover:text-white hover:bg-white/[0.05]">Skills</a>
             <a href="#experiences"
                 class="block px-3 py-2 rounded-lg text-sm text-neutral-300 hover:text-white hover:bg-white/[0.05]">Experiences</a>
+            <a href="#games"
+                class="block px-3 py-2 rounded-lg text-sm text-neutral-300 hover:text-white hover:bg-white/[0.05]">Games</a>
             <a href="#resources"
                 class="block px-3 py-2 rounded-lg text-sm text-neutral-300 hover:text-white hover:bg-white/[0.05]">Resources</a>
             <a href="#media"
@@ -563,10 +580,24 @@
             </div>
         </section>
 
-        <!-- 04. Community Resources Section (NEW) -->
+        <!-- 04. Games Section (In Development / Current Projects) -->
+        <section id="games" class="py-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col mb-10">
+                <div class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-1">// 04. Active Productions
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Games I'm Working On</h2>
+                <p class="text-sm text-neutral-400 mt-1">In-development Roblox titles, standalone game mechanics, and upcoming studio releases.</p>
+            </div>
+            <!-- Games Grid -->
+            <div id="games-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Dynamically populated from CONFIG.games -->
+            </div>
+        </section>
+
+        <!-- 05. Community Resources Section (NEW) -->
         <section id="resources" class="py-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col mb-10">
-                <div class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-1">// 04. Open Source &amp;
+                <div class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-1">// 05. Open Source &amp;
                     Contributions
                 </div>
                 <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Community Resources</h2>
@@ -579,24 +610,30 @@
             </div>
         </section>
 
-        <!-- 05. Media Showcase Section (Raycast Frame) -->
+        <!-- 06. Media Showcase Section -->
         <section id="media" class="py-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col mb-10">
-                <div class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-1">// 05. Video Showcases
+            <div class="flex flex-col mb-8">
+                <div class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-1">// 06. Video Showcases
                 </div>
                 <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Media &amp; Demos</h2>
-                <p class="text-sm text-neutral-400 mt-1">Footage and mechanics demonstrations from production game
-                    systems.</p>
+                <p class="text-sm text-neutral-400 mt-1">Footage, feature breakdowns, and mechanics demonstrations across games and modules.</p>
             </div>
-            <div id="media-container">
-                <!-- Dynamically populated: active video grid or sleek production reel frame -->
+
+            <!-- Showcase Filter Tabs (Tideline, High-Altitude Shift, Random, Modules) -->
+            <div id="media-filter-tabs" class="flex flex-wrap items-center gap-2 mb-8">
+                <!-- Dynamically populated filter tabs -->
+            </div>
+
+            <!-- Subsections Container -->
+            <div id="media-container" class="space-y-6">
+                <!-- Dynamically populated from CONFIG.mediaSections -->
             </div>
         </section>
 
-        <!-- 06. Contact Section (Raycast Bento) -->
+        <!-- 07. Contact Section (Raycast Bento) -->
         <section id="contact" class="py-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col mb-10">
-                <div class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-1">// 06. Direct Inquiries
+                <div class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-1">// 07. Direct Inquiries
                 </div>
                 <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Let's Build Something Exceptional
                 </h2>
@@ -730,7 +767,7 @@
     </footer>
 
     <!-- Config Script with Cache Buster -->
-    <script src="config.js?v=20261015"></script>
+    <script src="config.js?v=20261106"></script>
 
     <!-- Main Application Logic -->
     <script>
@@ -865,7 +902,114 @@
             `).join('');
         }
 
-        // 4.5 Community Resources Section (NEW)
+        // 4.5 Games In Development Section
+        const gamesGrid = document.getElementById('games-grid');
+        if (CONFIG.games && gamesGrid) {
+            gamesGrid.innerHTML = CONFIG.games.map(g => {
+                const isDelayed = g.statusType === 'delayed' || (g.status && g.status.toLowerCase().includes('delay'));
+                const statusBadgeStyle = isDelayed
+                    ? 'bg-amber-500/15 border-amber-500/30 text-amber-300'
+                    : 'bg-emerald-500/15 border-emerald-500/30 text-emerald-300';
+                const statusDotStyle = isDelayed
+                    ? 'bg-amber-400'
+                    : 'bg-emerald-400 animate-pulse';
+
+                return `
+                <div class="raycast-card p-6 sm:p-7 flex flex-col justify-between group">
+                    <div>
+                        <!-- 16:9 Preview Image Container -->
+                        <div class="relative w-full aspect-video rounded-xl overflow-hidden mb-5 border border-white/10 bg-[#090b10] group-hover:border-white/20 transition-all">
+                            <img src="${g.thumbnail}" alt="${g.title} Preview" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" loading="lazy" />
+                            
+                            <!-- Badges Overlay (Status Pill & Dev Mode) -->
+                            <div class="absolute top-3 left-3 flex flex-wrap gap-2 pointer-events-none z-10">
+                                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium backdrop-blur-md border ${statusBadgeStyle} shadow-lg">
+                                    <span class="w-1.5 h-1.5 rounded-full ${statusDotStyle}"></span>
+                                    <span>${g.status}</span>
+                                </span>
+                            </div>
+
+                            <div class="absolute top-3 right-3 pointer-events-none z-10">
+                                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium backdrop-blur-md bg-black/70 border border-white/15 text-neutral-200 shadow-lg">
+                                    <i class="${g.devTypeIcon || 'fa-solid fa-gamepad'} text-[11px] text-neutral-400"></i>
+                                    <span>${g.devType}</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Meta Row: Development Started & Team/Studio -->
+                        <div class="flex items-center justify-between text-xs font-mono text-neutral-400 mb-3">
+                            <span class="flex items-center gap-1.5">
+                                <i class="fa-regular fa-calendar text-neutral-500"></i>
+                                <span>Dev Started: <strong class="text-neutral-300 font-medium">${g.started}</strong></span>
+                            </span>
+                            <span class="px-2.5 py-0.5 rounded-md bg-white/[0.05] border border-white/10 text-neutral-400 text-[11px]">
+                                ${g.devTypeShort || 'Project'}
+                            </span>
+                        </div>
+
+                        <!-- Title -->
+                        <h3 class="text-xl sm:text-2xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                            ${g.title}
+                        </h3>
+
+                        <!-- Description -->
+                        <p class="text-xs sm:text-sm text-neutral-400 leading-relaxed mb-4">
+                            ${g.description}
+                        </p>
+
+                        <!-- Announcement Collapsible (Tideline delay note) -->
+                        ${g.announcement ? `
+                        <div class="mb-5">
+                            <button type="button" onclick="toggleGameAnnouncement('${g.id}')" class="w-full text-left px-3.5 py-2.5 rounded-xl bg-amber-500/[0.07] hover:bg-amber-500/[0.12] border border-amber-500/25 text-xs text-amber-300 font-mono flex items-center justify-between transition-colors">
+                                <span class="flex items-center gap-2">
+                                    <i class="fa-solid fa-bullhorn text-amber-400"></i>
+                                    <span>Read Delay Announcement</span>
+                                </span>
+                                <i id="announcement-chevron-${g.id}" class="fa-solid fa-chevron-down text-[10px] transition-transform duration-200"></i>
+                            </button>
+                            <div id="announcement-content-${g.id}" class="hidden mt-2 p-4 rounded-xl bg-black/60 border border-amber-500/20 text-xs text-neutral-300 space-y-2.5 leading-relaxed max-h-60 overflow-y-auto">
+                                ${g.announcement.split('\n\n').map(p => `<p>${p}</p>`).join('')}
+                            </div>
+                        </div>
+                        ` : ''}
+
+                        <!-- Tags Footer -->
+                        ${g.tags && g.tags.length ? `
+                        <div class="flex flex-wrap gap-1.5 mb-5">
+                            ${g.tags.map(t => `<span class="ray-kbd text-[10px]">${t}</span>`).join('')}
+                        </div>
+                        ` : ''}
+                    </div>
+
+                    <!-- Action Link Button -->
+                    <div class="pt-4 border-t border-white/[0.06]">
+                        <a href="${g.url}" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white/[0.05] hover:bg-white text-white hover:text-neutral-900 border border-white/10 hover:border-transparent text-xs font-semibold transition-all group-hover:border-white/20">
+                            <i class="fa-solid fa-gamepad"></i>
+                            <span>View Game on Roblox</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-70"></i>
+                        </a>
+                    </div>
+                </div>
+                `;
+            }).join('');
+        }
+
+        function toggleGameAnnouncement(id) {
+            const content = document.getElementById(`announcement-content-${id}`);
+            const chevron = document.getElementById(`announcement-chevron-${id}`);
+            if (!content || !chevron) return;
+            const isHidden = content.classList.contains('hidden');
+            if (isHidden) {
+                content.classList.remove('hidden');
+                chevron.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                chevron.classList.remove('rotate-180');
+            }
+        }
+
+        // 5. Community Resources Section (NEW)
         const resourcesGrid = document.getElementById('resources-grid');
         if (CONFIG.resources && resourcesGrid) {
             resourcesGrid.innerHTML = CONFIG.resources.map(r => `
@@ -885,89 +1029,133 @@
             `).join('');
         }
 
-        // 5. Media Showcase (Raycast Frame or Video Grid)
+        // 6. Media Showcase (Categorized Subsections for Each Game & Project)
         const mediaContainer = document.getElementById('media-container');
-        if (CONFIG.media && CONFIG.media.length > 0) {
-            mediaContainer.className = "grid grid-cols-1 md:grid-cols-2 gap-6";
-            mediaContainer.innerHTML = CONFIG.media.map(m => `
-                <div class="raycast-card p-6 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="ray-pill text-[11px]">${m.badge || 'Showcase'}</span>
-                        </div>
-                        ${m.videoUrl ? `
-                            <video src="${m.videoUrl}" controls playsinline class="w-full h-52 object-cover rounded-xl mb-4 border border-white/10 bg-black"></video>
-                        ` : ''}
-                        <h4 class="text-lg font-bold text-white mb-2">${m.title}</h4>
-                        <p class="text-xs sm:text-sm text-neutral-400 leading-relaxed mb-4">${m.description}</p>
-                    </div>
-                    <div class="flex flex-wrap gap-1.5 pt-4 border-t border-white/[0.06]">
-                        ${(m.tags || []).map(t => `<span class="ray-kbd">${t}</span>`).join('')}
-                    </div>
-                </div>
-            `).join('');
-        } else {
-            const fallbackText = CONFIG.mediaFallbackText || "Showcases are currently being compiled.";
-            const teasers = (CONFIG.mediaTeasers && CONFIG.mediaTeasers.length) ? CONFIG.mediaTeasers : [
-                {
-                    title: "Combat & Hitbox Systems",
-                    tag: "Gameplay Mechanics",
-                    desc: "Server-authoritative detection, responsive weapon swings, and client prediction."
-                },
-                {
-                    title: "Modular Inventory & Trading",
-                    tag: "Economy & UI",
-                    desc: "Fluid drag-and-drop inventory with secure session-based item serialization."
-                },
-                {
-                    title: "Procedural World & Quests",
-                    tag: "World Systems",
-                    desc: "Event-driven quest progression architecture with dynamic state syncing."
+        const mediaFilterContainer = document.getElementById('media-filter-tabs');
+        const mediaSections = (CONFIG.mediaSections || []).filter(s => !s.hidden);
+
+        if (mediaSections.length > 0) {
+            // 1. Render Filter Tabs
+            if (mediaFilterContainer) {
+                const tabs = [
+                    { id: 'all', label: 'All Showcases' },
+                    ...mediaSections.map(s => ({ id: s.id, label: s.title }))
+                ];
+
+                mediaFilterContainer.innerHTML = tabs.map((t, idx) => `
+                    <button type="button" onclick="filterShowcase('${t.id}')" id="tab-${t.id}" class="media-tab px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium transition-all ${idx === 0 ? 'bg-white text-neutral-900 shadow-md font-semibold' : 'bg-white/[0.04] text-neutral-400 hover:text-white hover:bg-white/[0.08] border border-white/[0.08]'}">
+                        ${t.label}
+                    </button>
+                `).join('');
+            }
+
+            // Badge Color Helper
+            const getBadgeClass = (type) => {
+                switch (type) {
+                    case 'amber': return 'bg-amber-500/10 border border-amber-500/25 text-amber-300';
+                    case 'emerald': return 'bg-emerald-500/10 border border-emerald-500/25 text-emerald-300';
+                    case 'purple': return 'bg-purple-500/10 border border-purple-500/25 text-purple-300';
+                    case 'blue':
+                    default: return 'bg-blue-500/10 border border-blue-500/25 text-blue-300';
                 }
-            ];
-            mediaContainer.innerHTML = `
-                <div class="raycast-card p-6 sm:p-10 border border-white/10">
-                    <!-- Window Top Controls -->
-                    <div class="flex items-center justify-between pb-6 mb-6 border-b border-white/[0.06]">
-                        <div class="flex items-center space-x-2">
-                            <div class="w-3 h-3 rounded-full bg-rose-500/70"></div>
-                            <div class="w-3 h-3 rounded-full bg-amber-500/70"></div>
-                            <div class="w-3 h-3 rounded-full bg-emerald-500/70"></div>
-                            <span class="text-xs font-mono text-neutral-400 ml-2">inadescent_demo_reel.mp4</span>
+            };
+
+            // 2. Render 4 Separate Game / Release Sections
+            mediaContainer.innerHTML = mediaSections.map(s => `
+                <div class="showcase-card raycast-card p-6 sm:p-8 group" id="showcase-${s.id}" data-category="${s.id}">
+                    <!-- Section Header -->
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-white/[0.06] mb-6">
+                        <div>
+                            <div class="flex flex-wrap items-center gap-2.5">
+                                <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight">${s.title}</h3>
+                                ${s.badge ? `
+                                    <span class="px-2.5 py-0.5 rounded-full text-xs font-mono font-medium ${getBadgeClass(s.badgeType)}">
+                                        ${s.badge}
+                                    </span>
+                                ` : ''}
+                            </div>
+                            <span class="text-xs text-neutral-500 font-mono mt-1 block">// Gameplay &amp; Systems Showcase</span>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-                            <span class="text-xs font-mono text-amber-300">Compilation in Progress</span>
+                        ${s.url ? `
+                            <a href="${s.url}" target="_blank" rel="noopener noreferrer" class="self-start sm:self-auto inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/[0.04] hover:bg-white/[0.1] border border-white/10 text-xs font-semibold text-neutral-200 hover:text-white transition-all">
+                                <span>${s.urlText || 'Open Link'}</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                        ` : ''}
+                    </div>
+
+                    <!-- Features List (No description per video, concise list of game features) -->
+                    <div class="mb-6">
+                        <div class="text-[11px] font-mono text-neutral-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-list-check text-neutral-500"></i>
+                            <span>Core Features &amp; Mechanics</span>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5">
+                            ${(s.features || []).map(f => `
+                                <div class="flex items-start space-x-2.5 text-xs text-neutral-300">
+                                    <span class="text-blue-400 font-bold mt-0.5">▹</span>
+                                    <span class="leading-relaxed">${f}</span>
+                                </div>
+                            `).join('')}
                         </div>
                     </div>
 
-                    <!-- Center Showcase Banner -->
-                    <div class="max-w-2xl mx-auto text-center space-y-4 mb-8">
-                        <div class="w-14 h-14 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-white text-xl mx-auto shadow-xl">
-                            <i class="fa-solid fa-film"></i>
-                        </div>
-                        <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight">Production Media Reel</h3>
-                        <p class="text-xs sm:text-sm text-neutral-400 leading-relaxed">${fallbackText}</p>
-                        
-                        <div class="pt-2">
-                            <button onclick="copyDiscordHandle()" class="ray-btn-primary text-xs">
-                                <i class="fa-brands fa-discord"></i>
-                                <span>Request Private Build Clips via Discord</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Teaser Cards -->
-                    ${teasers.length ? `
+                    <!-- Videos Grid -->
+                    ${s.videos && s.videos.length > 0 ? `
                         <div class="pt-6 border-t border-white/[0.06]">
-                            <div class="text-[11px] font-mono text-neutral-500 uppercase tracking-wider mb-4">Upcoming Showcase Modules:</div>
+                            <div class="text-[11px] font-mono text-neutral-400 uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <i class="fa-solid fa-play text-neutral-500"></i>
+                                <span>Gameplay Demonstrations (${s.videos.length})</span>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                ${s.videos.map(v => `
+                                    <div class="flex flex-col group/vid">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="text-xs font-semibold text-white group-hover/vid:text-blue-400 transition-colors flex items-center gap-1.5">
+                                                <i class="fa-solid fa-circle-play text-neutral-500 text-[11px]"></i>
+                                                ${v.title}
+                                            </span>
+                                            ${v.tag ? `<span class="ray-kbd text-[9px]">${v.tag}</span>` : ''}
+                                        </div>
+                                        <div class="relative w-full aspect-video rounded-xl overflow-hidden border border-white/10 bg-black shadow-lg">
+                                            <video src="${v.videoUrl}" ${v.poster ? `poster="${v.poster}"` : ''} controls preload="metadata" playsinline class="w-full h-full object-cover"></video>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    ` : `
+                        <div class="pt-5 border-t border-white/[0.06]">
+                            <div class="flex items-center justify-between p-4 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+                                <div class="flex items-center space-x-3 text-xs text-neutral-400 font-mono">
+                                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                                    <span>${s.statusNote || 'Showcase footage and mechanics demos being compiled.'}</span>
+                                </div>
+                                <span class="ray-kbd text-[10px] text-neutral-500">Upcoming Clips</span>
+                            </div>
+                        </div>
+                    `}
+                    <!-- Screenshots Gallery -->
+                    ${s.screenshots && s.screenshots.length > 0 ? `
+                        <div class="pt-6 border-t border-white/[0.06] mt-6">
+                            <div class="text-[11px] font-mono text-neutral-400 uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <i class="fa-regular fa-image text-neutral-500"></i>
+                                <span>In-Game Systems &amp; UI Interface (${s.screenshots.length})</span>
+                            </div>
                             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                                ${teasers.map(t => `
-                                    <div class="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] flex flex-col justify-between">
-                                        <div>
-                                            <span class="ray-kbd text-[10px] mb-2">${t.tag}</span>
-                                            <h5 class="text-sm font-semibold text-white mb-1">${t.title}</h5>
-                                            <p class="text-xs text-neutral-400 leading-relaxed">${t.desc}</p>
+                                ${s.screenshots.map(sc => `
+                                    <div class="group/shot flex flex-col cursor-pointer" onclick="openImageModal('${sc.imageUrl}', '${sc.title.replace(/'/g, "\\'")}')">
+                                        <div class="relative w-full aspect-video rounded-xl overflow-hidden border border-white/10 bg-black/40 group-hover/shot:border-white/25 transition-all shadow-md">
+                                            <img src="${sc.imageUrl}" alt="${sc.title}" class="w-full h-full object-cover group-hover/shot:scale-105 transition-transform duration-300" loading="lazy" />
+                                            <div class="absolute inset-0 bg-black/20 group-hover/shot:bg-transparent transition-colors"></div>
+                                            <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-black/75 backdrop-blur-sm text-[10px] font-mono text-neutral-300 border border-white/10 opacity-0 group-hover/shot:opacity-100 transition-opacity flex items-center gap-1">
+                                                <i class="fa-solid fa-expand text-[9px]"></i>
+                                                <span>Zoom</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-2 px-1">
+                                            <span class="text-xs text-neutral-300 font-medium truncate group-hover/shot:text-white transition-colors">${sc.title}</span>
+                                            ${sc.tag ? `<span class="ray-kbd text-[9px] ml-2 shrink-0">${sc.tag}</span>` : ''}
                                         </div>
                                     </div>
                                 `).join('')}
@@ -975,7 +1163,65 @@
                         </div>
                     ` : ''}
                 </div>
-            `;
+            `).join('');
+
+            // Automatically pause other videos when one begins playing
+            document.querySelectorAll('#media-container video').forEach(vid => {
+                vid.addEventListener('play', () => {
+                    document.querySelectorAll('#media-container video').forEach(other => {
+                        if (other !== vid && !other.paused) {
+                            other.pause();
+                        }
+                    });
+                });
+            });
+        }
+
+        // Image Lightbox Modal Logic
+        function openImageModal(src, caption) {
+            const backdrop = document.getElementById('image-modal-backdrop');
+            const img = document.getElementById('image-modal-img');
+            const cap = document.getElementById('image-modal-caption');
+            if (!backdrop || !img) return;
+            img.src = src;
+            cap.innerText = caption || '';
+            backdrop.classList.remove('hidden');
+            setTimeout(() => backdrop.classList.remove('opacity-0'), 10);
+        }
+
+        function closeImageModal() {
+            const backdrop = document.getElementById('image-modal-backdrop');
+            if (!backdrop) return;
+            backdrop.classList.add('opacity-0');
+            setTimeout(() => backdrop.classList.add('hidden'), 200);
+        }
+
+        document.getElementById('image-modal-backdrop')?.addEventListener('click', (e) => {
+            if (e.target.id === 'image-modal-backdrop') {
+                closeImageModal();
+            }
+        });
+
+        // Showcase Category Tab Filter Function
+        function filterShowcase(id) {
+            const cards = document.querySelectorAll('.showcase-card');
+            const tabs = document.querySelectorAll('.media-tab');
+
+            tabs.forEach(tab => {
+                if (tab.id === `tab-${id}`) {
+                    tab.className = "media-tab px-3.5 py-1.5 rounded-xl text-xs font-mono font-semibold transition-all bg-white text-neutral-900 shadow-md";
+                } else {
+                    tab.className = "media-tab px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium transition-all bg-white/[0.04] text-neutral-400 hover:text-white hover:bg-white/[0.08] border border-white/[0.08]";
+                }
+            });
+
+            cards.forEach(card => {
+                if (id === 'all' || card.getAttribute('data-category') === id) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
         }
 
         // 6. Contact Section Details
@@ -993,6 +1239,8 @@
             { id: "about", title: "Go to About Me", icon: "fa-solid fa-user", section: "#about", shortcut: "G A" },
             { id: "skills", title: "View Technical Skills", icon: "fa-solid fa-code", section: "#skills", shortcut: "G S" },
             { id: "experiences", title: "Explore Experiences & Roles", icon: "fa-solid fa-briefcase", section: "#experiences", shortcut: "G E" },
+            { id: "games", title: "View Games In Development", icon: "fa-solid fa-gamepad", section: "#games", shortcut: "G G" },
+            { id: "resources", title: "View Community Resources", icon: "fa-brands fa-github", section: "#resources", shortcut: "G R" },
             { id: "media", title: "Watch Media & Showcases", icon: "fa-solid fa-play", section: "#media", shortcut: "G M" },
             { id: "contact", title: "Contact & Discord", icon: "fa-solid fa-paper-plane", section: "#contact", shortcut: "G C" },
             { id: "copy-discord", title: "Copy Discord Username (inadescent)", icon: "fa-brands fa-discord", action: "copy-discord", shortcut: "⌘ D" },
@@ -1068,6 +1316,14 @@
 
         // Palette Keyboard Navigation
         window.addEventListener('keydown', (e) => {
+            // Close Image Modal on ESC
+            const imgModal = document.getElementById('image-modal-backdrop');
+            if (imgModal && !imgModal.classList.contains('hidden') && e.key === 'Escape') {
+                e.preventDefault();
+                closeImageModal();
+                return;
+            }
+
             // Open on ⌘K / Ctrl+K
             if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
                 e.preventDefault();
