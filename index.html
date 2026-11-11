@@ -556,11 +556,11 @@
                 <div class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-1">// 02. Technical
                     Capabilities</div>
                 <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Skills &amp; Expertise</h2>
-                <p class="text-sm text-neutral-400 mt-1">Modular codebases, server-authoritative logic, and disciplined
-                    team coordination.</p>
+                <p class="text-sm text-neutral-400 mt-1">Modular codebases, server-authoritative logic, team
+                    coordination, and social media content management.</p>
             </div>
             <!-- Skills Grid -->
-            <div id="skills-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div id="skills-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Dynamically populated from CONFIG.skills -->
             </div>
         </section>
@@ -571,8 +571,8 @@
                 <div class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-1">// 03. Featured Portfolio
                 </div>
                 <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Experiences &amp; Roles</h2>
-                <p class="text-sm text-neutral-400 mt-1">Lead development, systems architecture, and production
-                    management across Roblox studios.</p>
+                <p class="text-sm text-neutral-400 mt-1">Lead development, systems architecture, production
+                    management, and content creation across Roblox studios.</p>
             </div>
             <!-- Experiences Grid -->
             <div id="experiences-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -751,7 +751,7 @@
             <div class="flex items-center space-x-3">
                 <span class="font-mono font-bold text-white text-sm" id="footer-handle">inadescent</span>
                 <span>&bull;</span>
-                <span>Roblox Developer &amp; Project Manager</span>
+                <span>Roblox Developer, PM &amp; Content Manager</span>
                 <span>&bull;</span>
                 <span>&copy; <span id="footer-year">2026</span> Al.</span>
             </div>
@@ -767,7 +767,7 @@
     </footer>
 
     <!-- Config Script with Cache Buster -->
-    <script src="config.js?v=20261106"></script>
+    <script src="config.js?v=20261111"></script>
 
     <!-- Main Application Logic -->
     <script>
@@ -861,8 +861,10 @@
         // 4. Experiences Section (Clean Cards)
         const experiencesGrid = document.getElementById('experiences-grid');
         if (CONFIG.experiences && experiencesGrid) {
-            experiencesGrid.innerHTML = CONFIG.experiences.map(e => `
-                <div class="raycast-card p-6 sm:p-7 flex flex-col justify-between group">
+            experiencesGrid.innerHTML = CONFIG.experiences.map((e, idx) => {
+                const spanFull = CONFIG.experiences.length % 2 === 1 && idx === CONFIG.experiences.length - 1;
+                return `
+                <div class="raycast-card p-6 sm:p-7 flex flex-col justify-between group ${spanFull ? 'md:col-span-2' : ''}">
                     <div>
                         <!-- Header with Badge & Category -->
                         <div class="flex items-center justify-between gap-2 mb-4">
@@ -899,7 +901,8 @@
                         ${(e.tags || []).map(t => `<span class="ray-kbd text-[10px]">${t}</span>`).join('')}
                     </div>
                 </div>
-            `).join('');
+                `;
+            }).join('');
         }
 
         // 4.5 Games In Development Section

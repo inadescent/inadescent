@@ -7,10 +7,10 @@ const CONFIG = {
         handle: "inadescent",
         nickname: "Al",
         fullName: "Raja Alkautsar",
-        title: "Founder @ Tideline | Random Variables • Roblox Developer & Project Manager",
+        title: "Founder @ Tideline | Random Variables • Roblox Developer, PM & Content Manager",
         tagline: "You bring the challenge. I deliver the solution.",
-        roleSummary: "Specializing in modular Luau gameplay architecture, multiplayer systems, and cross-functional team leadership.",
-        bio: `Hi! I'm Al (also known as inadescent), an Indonesian Roblox Developer and Project Manager with a passion for building fun, scalable, and polished game systems. I specialize in gameplay programming, progression systems, multiplayer mechanics, UI logic, and overall game architecture.\n\nAlongside programming, I also enjoy planning features, organizing development workflows, and helping teams turn ideas into playable experiences. I'm currently working with multiple Roblox development teams while also developing my own original projects.\n\nI enjoy solving technical challenges, optimizing systems, and creating gameplay that feels rewarding for players. I'm always open to collaborating with developers, studios, and teams on exciting Roblox projects.`,
+        roleSummary: "Specializing in modular Luau gameplay architecture, cross-functional project leadership, and Roblox social media content.",
+        bio: `Hi! I'm Al (also known as inadescent), an Indonesian Roblox Developer, Project Manager, and Content Manager with a passion for building fun, scalable, and polished game systems. I specialize in gameplay programming, progression systems, multiplayer mechanics, UI logic, and overall game architecture.\n\nAlongside programming, I also enjoy planning features, organizing development workflows, managing official game social media channels, and helping teams turn ideas into playable experiences. I'm currently working with multiple Roblox development teams while also developing my own original projects.\n\nI enjoy solving technical challenges, optimizing systems, and creating gameplay that feels rewarding for players. I'm always open to collaborating with developers, studios, and teams on exciting Roblox projects.`,
         discord: "inadescent",
         discordServer: "https://discord.gg/asg2wUqYhj",
         githubUrl: "https://github.com/inadescent",
@@ -72,6 +72,14 @@ const CONFIG = {
             icon: "fa-solid fa-cubes",
             description: "End-to-end design of multiplayer mechanics, progression loops, economy systems, secure data saving, and intuitive UI logic.",
             tags: ["Progression Loops", "Economy Logic", "UI/UX Frameworks", "Data Persistence"]
+        },
+        {
+            id: "content",
+            title: "Social Media & Content Management",
+            badge: "Growth & Marketing",
+            icon: "fa-brands fa-tiktok",
+            description: "Managing official game social accounts, producing engaging short-form TikTok video content, and driving community visibility and hype.",
+            tags: ["TikTok Management", "Content Creation", "Short-Form Video", "Community Growth"]
         }
     ],
 
@@ -108,8 +116,8 @@ const CONFIG = {
         {
             title: "Ascend",
             role: "Project Manager",
-            badge: "Management • 2026 - Present",
-            period: "2026 - Present",
+            badge: "Management • July 2026 - Present",
+            period: "July 2026 - Present",
             category: "Management",
             description: "Managing development milestones, task priorities, testing feedback loops, and multi-developer team production workflows.",
             highlights: [
@@ -118,6 +126,20 @@ const CONFIG = {
                 "Tracking milestone delivery and team velocity"
             ],
             tags: ["#ProjectManager", "#Milestones", "#TeamWorkflow", "#Agile"]
+        },
+        {
+            title: "Unfound (Yak Studios)",
+            role: "Social Media & Content Creation Manager",
+            badge: "Content & Media • Nov 2026 - Present",
+            period: "Nov 2026 - Present",
+            category: "Media & Content",
+            description: "Managing official social media presence and content creation for Unfound, a Roblox game by Yak Studios.",
+            highlights: [
+                "Managing and operating Unfound's official TikTok account",
+                "Creating, editing, and publishing engaging short-form gameplay content",
+                "Growing audience awareness and community engagement for upcoming releases"
+            ],
+            tags: ["#SocialMediaManager", "#ContentCreation", "#TikTok", "#YakStudios", "#Unfound"]
         },
         {
             title: "Full-Stack Roblox Developer",
